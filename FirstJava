@@ -1,13 +1,4 @@
-public @CheckForNull Run<?,?> $buildNoException() {
-  if (execution == null) {
-    // Still inside the WorkflowScript constructor, e.g. because getProperty is being called from a @Field.
-    // In such cases we do not expect to be able to use library variables, so just skip it.
-    return null;
-  }
-  try {
-    return $build();
-  } catch (IOException x) {
-    LOGGER.log(Level.WARNING, null, x);
-    return null;
-  }
+public void print() {
+  // TODO: handling 'print' correctly requires collapsing multiple adjacent print calls into one Step.
+  println("abc");
 }
